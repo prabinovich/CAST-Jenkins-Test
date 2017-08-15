@@ -1,4 +1,4 @@
-slackSend channel: "#smallfibonacci", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+slackSend channel: "#smallfibonacci", message: "Build Started: Job:${env.JOB_NAME} Build #${env.BUILD_NUMBER}"
 
 stage('Deploy approval'){
     input "Deploy to prod?"
@@ -25,4 +25,4 @@ node ('Docker-Build-Box') {
    )
 }
 
-slackSend channel: "#smallfibonacci", message: "Build Completed: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+slackSend channel: "#smallfibonacci", message: "Build Completed: Job:${env.JOB_NAME} Build #${env.BUILD_NUMBER}"
